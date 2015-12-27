@@ -36,7 +36,7 @@ cacheSolve <- function(x, ...) {
 	## call the getsolve function to see if the cache exists      
 	m<-x$getsolve()			
 	
-	## if the cache is not null, return the cache		
+	## if the cache is not null (it exists), return the cache		
 	if(!is.null(m)) {
 			message("getting cached data")
 			return(m)
@@ -48,5 +48,7 @@ cacheSolve <- function(x, ...) {
 	
 	## then put it in the cache
 	x$setsolve(m)
+	
+	## then return the freshly calculated inverse
 	m
 }
